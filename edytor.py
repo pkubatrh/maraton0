@@ -32,9 +32,9 @@ class Ui_notepad(object):
         self.openfile = QtGui.QPushButton(self.centralwidget)
         self.openfile.setGeometry(QtCore.QRect(0, 20, 85, 27))
         self.openfile.setObjectName(_fromUtf8("openfile"))
-        self.closeButton = QtGui.QPushButton(self.centralwidget)
-        self.closeButton.setGeometry(QtCore.QRect(110, 20, 85, 27))
-        self.closeButton.setObjectName(_fromUtf8("saveButton"))
+        self.saveButton = QtGui.QPushButton(self.centralwidget)
+        self.saveButton.setGeometry(QtCore.QRect(110, 20, 85, 27))
+        self.saveButton.setObjectName(_fromUtf8("saveButton"))
         self.textEdit = QtGui.QTextEdit(self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(3, 74, 791, 491))
         self.textEdit.setObjectName(_fromUtf8("textEdit"))
@@ -45,13 +45,25 @@ class Ui_notepad(object):
         notepad.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(notepad)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        self.statusbar.showMessage('Welcome to this fucking application', 10000)
         notepad.setStatusBar(self.statusbar)
 
         self.retranslateUi(notepad)
+        self.setupMenubar(notepad)
         QtCore.QMetaObject.connectSlotsByName(notepad)
 
     def retranslateUi(self, notepad):
         notepad.setWindowTitle(_translate("notepad", "MainWindow", None))
         self.openfile.setText(_translate("notepad", "Open File", None))
-        self.closeButton.setText(_translate("notepad", "Save your shit", None))
+        self.saveButton.setText(_translate("notepad", "Save your shit", None))
+
+    def setupMenubar(self, notepad): 
+        exitAction = QtGui.QAction('&Exit', self) 
+        exitAction.setShortcut('Ctrl+Q')
+        exitAction.setStatusTip('Exit application')
+        exitAction.triggered.connect(QtGui.qApp.quit)
+        fileMenu = self.menubar.addMenu('&File')
+        fileMenu.addAction(exitAction)
+        fileMenu.setGeometry(QtCore.QRect(20, 20, 20, 20))
+        
 
