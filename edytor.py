@@ -49,7 +49,6 @@ class Ui_notepad(object):
         notepad.setStatusBar(self.statusbar)
 
         self.retranslateUi(notepad)
-        self.setupMenubar(notepad)
         QtCore.QMetaObject.connectSlotsByName(notepad)
 
     def retranslateUi(self, notepad):
