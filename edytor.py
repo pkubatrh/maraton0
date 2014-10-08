@@ -56,13 +56,3 @@ class Ui_notepad(object):
         self.openfile.setText(_translate("notepad", "Open File", None))
         self.saveButton.setText(_translate("notepad", "Save your shit", None))
 
-    def setupMenubar(self, notepad): 
-        exitAction = QtGui.QAction('&Exit', self) 
-        exitAction.setShortcut('Ctrl+Q')
-        exitAction.setStatusTip('Exit application')
-        exitAction.triggered.connect(QtGui.qApp.quit)
-        fileMenu = self.menubar.addMenu('&File')
-        fileMenu.addAction(exitAction)
-        fileMenu.setGeometry(QtCore.QRect(20, 20, 20, 20))
-        
-

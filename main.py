@@ -14,6 +14,7 @@ class FirstWin(QMainWindow):
         self.ui.setupUi(self)
         QtCore.QObject.connect(self.ui.openfile, QtCore.SIGNAL('clicked()'), self.file_dialog)
         QtCore.QObject.connect(self.ui.saveButton, QtCore.SIGNAL('clicked()'), self.save_file)
+        self.setupMenubar()
 
     def file_dialog(self):
         fn = QFileDialog.getOpenFileName(self,
@@ -30,6 +31,14 @@ class FirstWin(QMainWindow):
         mystream = QTextStream(self.myfile)
         mystream << self.ui.textEdit.toPlainText()
 
+    def setupMenubar(self): 
+        exitAction = QtGui.QAction('&Exit', self) 
+        exitAction.setShortcut('Ctrl+Q')
+        exitAction.setStatusTip('Exit application')
+        exitAction.triggered.connect(QtGui.qApp.quit)
+        fileMenu = self.ui.menubar.addMenu('&File')
+        fileMenu.addAction(exitAction)
+        fileMenu.setGeometry(QtCore.QRect(20, 20, 20, 20))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
