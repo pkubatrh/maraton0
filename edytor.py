@@ -34,7 +34,7 @@ class Ui_notepad(object):
         self.openfile.setObjectName(_fromUtf8("openfile"))
         self.closeButton = QtGui.QPushButton(self.centralwidget)
         self.closeButton.setGeometry(QtCore.QRect(110, 20, 85, 27))
-        self.closeButton.setObjectName(_fromUtf8("closeButton"))
+        self.closeButton.setObjectName(_fromUtf8("saveButton"))
         self.textEdit = QtGui.QTextEdit(self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(3, 74, 791, 491))
         self.textEdit.setObjectName(_fromUtf8("textEdit"))
@@ -53,5 +53,5 @@ class Ui_notepad(object):
     def retranslateUi(self, notepad):
         notepad.setWindowTitle(_translate("notepad", "MainWindow", None))
         self.openfile.setText(_translate("notepad", "Open File", None))
-        self.closeButton.setText(_translate("notepad", "Close button", None))
+        self.closeButton.setText(_translate("notepad", "Save your shit", None))
 
