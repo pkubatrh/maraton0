@@ -2,9 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QWebPage>
-#include <QWebFrame>
-#include <QWebElement>
 
 namespace Ui {
 class MainWindow;
@@ -18,16 +15,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
-    QWebPage page;
-
-private Q_SLOTS:
-    void readFirst();
-
-Q_SIGNALS:
-    void finished();
-
 };
 
 #endif // MAINWINDOW_H
