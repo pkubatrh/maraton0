@@ -15,6 +15,9 @@ public:
     explicit DetskeOkenko(QWidget *parent = 0);
     ~DetskeOkenko();
 
+public Q_SLOTS:
+    void openVids();
+
 private:
     Ui::DetskeOkenko *ui;
 

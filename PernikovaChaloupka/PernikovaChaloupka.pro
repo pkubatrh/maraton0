@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui webkit webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,14 +15,17 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     clickablelabel.cpp \
-    detskeokenko.cpp
+    detskeokenko.cpp \
+    ditevideo.cpp
 
 HEADERS  += mainwindow.h \
     clickablelabel.h \
-    detskeokenko.h
+    detskeokenko.h \
+    ditevideo.h
 
 FORMS    += mainwindow.ui \
-    detskeokenko.ui
+    detskeokenko.ui \
+    ditevideo.ui
 
 OTHER_FILES +=
 
