@@ -1,10 +1,10 @@
-#include "mainwindow.h"
+#include "spells.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    Spells w;
     w.show();
 
     return a.exec();
