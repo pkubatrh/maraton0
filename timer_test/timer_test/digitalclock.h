@@ -12,6 +12,7 @@ class DigitalClock : public QLCDNumber
 public:
     int time;
     DigitalClock(QWidget *parent = 0);
+    void setTime(int t);
 
 private slots:
     void showTime();

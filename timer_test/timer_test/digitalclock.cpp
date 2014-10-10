@@ -9,8 +9,15 @@ DigitalClock::DigitalClock(QWidget *parent):QLCDNumber(parent)
     connect(timer, SIGNAL(timeout()), this, SLOT(start()));
     timer->start(5000);
 
+    setTime(300);
+
+    resize(300,120);
+}
+
+void DigitalClock::setTime(int t)
+{
     QString text;
-    time = 300;
+    time = t;
     if(time / 60 < 10)
         text = "0";
     text.append(QString::number(time / 60, 10));
@@ -18,11 +25,6 @@ DigitalClock::DigitalClock(QWidget *parent):QLCDNumber(parent)
     if(time % 60 < 10)
         text.append("0");
     text.append(QString::number(time % 60, 10));
-    if(time % 2 == 0 && time != 0)
-        text[2] = ' ';
-
-
-    resize(300,120);
 
     display(text);
 }
