@@ -13,11 +13,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    clickablelabel.cpp \
+    detskeokenko.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    clickablelabel.h \
+    detskeokenko.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    detskeokenko.ui
 
 OTHER_FILES +=
 

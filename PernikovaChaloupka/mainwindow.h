@@ -15,6 +15,12 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private Q_SLOTS:
+    void debugPrint();
+
+public Q_SLOTS:
+    void detatko();
+
 private:
     Ui::MainWindow *ui;
 };
