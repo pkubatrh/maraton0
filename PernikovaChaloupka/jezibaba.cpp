@@ -100,3 +100,10 @@ void jezibaba::closeVids() {
     delete v;
     this->showFullScreen();
 }
+
+void jezibaba::on_label_4_clicked()
+{
+    Pojisteniclanek *poj = new Pojisteniclanek("http://www.kornfeil.cz/");
+    poj->showFullScreen();
+    connect(poj, SIGNAL(closing()), this, SLOT(closeVids()));
+}

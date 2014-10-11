@@ -38,6 +38,8 @@ private slots:
     void on_label_3_clicked();
     void closeVids();
 
+    void on_label_4_clicked();
+
 private:
     Ui::jezibaba *ui;
 
