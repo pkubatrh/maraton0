@@ -9,22 +9,33 @@ Camera::Camera(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->verticalLayout->setAlignment(Qt::AlignCenter);
+    ui->pushButton_3->setIcon(QIcon(QPixmap(":/images/arrow_green.png")));
+    QRect *r = new QRect();
+    r->setWidth(200);
+    r->setHeight(30);
+    ui->pushButton_3->setFocusPolicy(Qt::NoFocus);
+    ui->pushButton_3->setMaximumHeight(30);
+    ui->pushButton_3->setMaximumWidth(200);
+    ui->pushButton_3->setFlat(true);
+    ui->pushButton_3->setIconSize(r->size());
+    ui->pushButton_3->setText("");
     this->setWindowModality(Qt::WindowModal);
     QCamera* camera;
 
     QByteArray cameraDevice = QCamera::availableDevices()[0];
     camera = new QCamera(cameraDevice);
-
     camera->setViewfinder(ui->viewfinder);
-
     camera->setCaptureMode(QCamera::CaptureStillImage);
-
-    //set the viewfinder to be the central widget of mainWindow
-    //camera->setViewfinder(ui->viewfinder);
     camera->start();
+    connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(closeMe()));
 }
 
 Camera::~Camera()
 {
     delete ui;
+}
+
+void Camera::closeMe() {
+    this->close();
+    emit closing();
 }

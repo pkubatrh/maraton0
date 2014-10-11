@@ -17,6 +17,13 @@ public:
 
 private:
     Ui::Camera *ui;
+
+Q_SIGNALS:
+    void closing();
+
+public Q_SLOTS:
+    void closeMe();
+
 };
 
 #endif // CAMERA_H

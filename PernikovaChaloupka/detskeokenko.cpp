@@ -83,4 +83,5 @@ void DetskeOkenko::on_label_3_clicked()
 void DetskeOkenko::openCam() {
     Camera *cam = new Camera();
     cam->showFullScreen();
+    connect(cam, SIGNAL(closing()), this, SLOT(closeVids()));
 }
