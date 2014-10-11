@@ -1,6 +1,7 @@
 #include "jezibaba.h"
 #include "chat.h"
 #include "spells.h"
+#include "pojisteniclanek.h"
 #include "ui_jezibaba.h"
 #include <QPixmap>
 #include <QLabel>
@@ -85,4 +86,17 @@ void jezibaba::on_pushButton_4_clicked()
 {
     if (!ui->widget->running)
         ui->widget->decSec();
+}
+
+void jezibaba::on_label_3_clicked()
+{
+    Pojisteniclanek *poj = new Pojisteniclanek("http://uncyclopedia.wikia.com/wiki/HowTo:Cook_Children");
+    poj->showFullScreen();
+    connect(poj, SIGNAL(closing()), this, SLOT(closeVids()));
+}
+
+void jezibaba::closeVids() {
+    QObject *v = QObject::sender();
+    delete v;
+    this->showFullScreen();
 }
