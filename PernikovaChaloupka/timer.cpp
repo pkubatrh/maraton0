@@ -6,6 +6,7 @@ timer::timer(QWidget *parent):QLCDNumber(parent)
 
     //QTimer *timer = new QTimer(this);
     setTime(0);
+    this->setStyleSheet("background: white");
 
     //resize(300,120);
 }
@@ -13,6 +14,7 @@ timer::timer(QWidget *parent):QLCDNumber(parent)
 void timer::setTime(int t)
 {
     QString text;
+    setPalette(QPalette());
     time = t;
     if(time / 60 < 10)
         text = "0";
