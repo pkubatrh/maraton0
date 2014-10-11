@@ -1,14 +1,20 @@
 #include "chat.h"
 #include "ui_chat.h"
 
-chat::chat(QWidget *parent) :
+Chat::Chat(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::chat)
+    ui(new Ui::Chat)
 {
     ui->setupUi(this);
 }
 
-chat::~chat()
+Chat::~Chat()
 {
     delete ui;
+}
+
+void Chat::on_lineEdit_returnPressed()
+{
+    ui->plainTextEdit->appendPlainText("Jezibaba>> " + ui->lineEdit->text());
+    ui->lineEdit->clear();
 }

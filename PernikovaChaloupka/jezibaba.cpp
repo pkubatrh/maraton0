@@ -1,4 +1,5 @@
 #include "jezibaba.h"
+#include "chat.h"
 #include "ui_jezibaba.h"
 #include <QPixmap>
 #include <QLabel>
@@ -19,17 +20,9 @@ jezibaba::~jezibaba()
 
 void jezibaba::on_label_clicked()
 {
-    this->days++;
-    QFont f( "Arial", 150, QFont::Bold);
-    p->eraseRect(image->rect());
-    delete p;
-    image = new QImage(":/images/kal.png");
-    p = new QPainter(this->image);
-    p->setFont(f);
-    p->drawText(image->rect(), Qt::AlignCenter, QString::number(days, 10));
-    ui->label->setPixmap(QPixmap::fromImage(*image));
-    ui->label->setAlignment(Qt::AlignCenter);
-    ui->label->repaint();
+    //qDebug() << "serepes\n";
+    Chat *chat = new Chat();
+    chat->showFullScreen();
 }
 
 void jezibaba::on_pushButton_clicked()
