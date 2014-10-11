@@ -54,3 +54,32 @@ void jezibaba::on_label_2_clicked()
     w->showFullScreen();
     connect(w, SIGNAL(closing()), this, SLOT(showFullScreen()));
 }
+
+void jezibaba::on_widget_clicked()
+{
+    ui->widget->start();
+}
+
+void jezibaba::on_pushButton_2_clicked()
+{
+    if (!ui->widget->running)
+        ui->widget->incMin();
+}
+
+void jezibaba::on_pushButton_5_clicked()
+{
+    if (!ui->widget->running)
+        ui->widget->decMin();
+}
+
+void jezibaba::on_pushButton_3_clicked()
+{
+    if (!ui->widget->running)
+        ui->widget->incSec();
+}
+
+void jezibaba::on_pushButton_4_clicked()
+{
+    if (!ui->widget->running)
+        ui->widget->decSec();
+}
