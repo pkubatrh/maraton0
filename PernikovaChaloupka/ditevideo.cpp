@@ -8,6 +8,9 @@ DiteVideo::DiteVideo(QWidget *parent) :
     ui(new Ui::DiteVideo)
 {
     ui->setupUi(this);
+    QPalette* palette = new QPalette();
+    palette->setBrush(QPalette::Background,*(new QBrush(*(new QPixmap(":/images/per_tex.png")))));
+    setPalette(*palette);
     QNetworkProxyFactory::setUseSystemConfiguration (true);
     QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, true);
     QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, true);

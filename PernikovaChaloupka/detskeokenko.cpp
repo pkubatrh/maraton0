@@ -11,7 +11,7 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     ui(new Ui::DetskeOkenko)
 {
     QPalette* palette = new QPalette();
-    palette->setBrush(QPalette::Background,*(new QBrush(*(new QPixmap("/home/peta/Stažené/per_tex.png")))));
+    palette->setBrush(QPalette::Background,*(new QBrush(*(new QPixmap(":/images/per_tex.png")))));
     setPalette(*palette);
     ui->setupUi(this);
     ui->label->setText("Šikovná videa");
