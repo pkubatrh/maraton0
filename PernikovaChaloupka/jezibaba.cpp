@@ -31,6 +31,8 @@ jezibaba::jezibaba(QWidget *parent) :
     ui->pushButton->setText("");
 
     ui->label_2->setPixmap(QPixmap(":/images/spell_book.png").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/1.8));
+    ui->label_3->setPixmap(QPixmap(":/images/cook_baby.jpg").scaled(QApplication::desktop()->screenGeometry().width()/4.0, QApplication::desktop()->screenGeometry().height()/1.8));
+
 }
 
 jezibaba::~jezibaba()
