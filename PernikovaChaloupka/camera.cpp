@@ -23,7 +23,6 @@ Camera::Camera(QWidget *parent) :
     ui->pushButton_3->setIconSize(r->size());
     ui->pushButton_3->setText("");
     this->setWindowModality(Qt::WindowModal);
-    QCamera* camera;
 
     QByteArray cameraDevice = QCamera::availableDevices()[0];
     camera = new QCamera(cameraDevice);
@@ -40,5 +39,6 @@ Camera::~Camera()
 
 void Camera::closeMe() {
     this->close();
+    camera->stop();
     emit closing();
 }

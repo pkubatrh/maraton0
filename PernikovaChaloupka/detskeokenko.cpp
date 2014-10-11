@@ -16,6 +16,7 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     palette->setBrush(QPalette::Background,*(new QBrush(*(new QPixmap(":/images/per_tex.png")))));
     setPalette(*palette);
     ui->setupUi(this);
+    ui->gridLayout_2->setAlignment(Qt::AlignCenter);
     ui->label->setText("Šikovná videa");
     ui->label_2->setText("Poslední zpráva rodičům");
     ui->label_4->setText("Pojištění");
@@ -48,11 +49,11 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     p->drawText(image->rect(), Qt::AlignCenter, QString::number(days, 10));
     ui->label_3->setPixmap(QPixmap::fromImage(*image));
     ui->label_3->setAlignment(Qt::AlignCenter);
-    ui->label->setPixmap(QPixmap(":/images/yt_logo.png").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/5.0));
-    ui->label_2->setPixmap(QPixmap(":/images/webka.png").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/2.2));
-    ui->label_6->setPixmap(QPixmap(":/images/mot.gif").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/1.8));
-    ui->label_4->setPixmap(QPixmap(":/images/money.jpg").scaled(QApplication::desktop()->screenGeometry().width()/3.4, QApplication::desktop()->screenGeometry().height()/2.2));
-    ui->label_5->setPixmap(QPixmap(":/images/krav.png").scaled(QApplication::desktop()->screenGeometry().width()/3.2, QApplication::desktop()->screenGeometry().height()/2.2));
+    ui->label->setPixmap(QPixmap(":/images/yt_logo.png").scaled(QApplication::desktop()->screenGeometry().width()/4.6, QApplication::desktop()->screenGeometry().height()/6.0));
+    ui->label_2->setPixmap(QPixmap(":/images/webka.png").scaled(QApplication::desktop()->screenGeometry().width()/4.6, QApplication::desktop()->screenGeometry().height()/3.2));
+    ui->label_6->setPixmap(QPixmap(":/images/mot.gif").scaled(QApplication::desktop()->screenGeometry().width()/4.6, QApplication::desktop()->screenGeometry().height()/2.8));
+    ui->label_4->setPixmap(QPixmap(":/images/money.jpg").scaled(QApplication::desktop()->screenGeometry().width()/4.4, QApplication::desktop()->screenGeometry().height()/3.2));
+    ui->label_5->setPixmap(QPixmap(":/images/krav.png").scaled(QApplication::desktop()->screenGeometry().width()/4.2, QApplication::desktop()->screenGeometry().height()/3.2));
 
 }
 

@@ -2,6 +2,7 @@
 #define CAMERA_H
 
 #include <QWidget>
+#include <QCamera>
 
 namespace Ui {
 class Camera;
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::Camera *ui;
+    QCamera *camera;
 
 Q_SIGNALS:
     void closing();

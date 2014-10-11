@@ -14,6 +14,8 @@ jezibaba::jezibaba(QWidget *parent) :
     ui(new Ui::jezibaba)
 {
     ui->setupUi(this);
+    ui->gridLayout->setAlignment(Qt::AlignCenter);
+    ui->gridLayout_2->setSpacing(6);
     QPalette* palette = new QPalette();
     palette->setBrush(QPalette::Background,*(new QBrush(*(new QPixmap(":/images/witch_tex.png")))));
     setPalette(*palette);
@@ -30,10 +32,10 @@ jezibaba::jezibaba(QWidget *parent) :
     ui->pushButton->setIconSize(r->size());
     ui->pushButton->setText("");
 
-    ui->label_2->setPixmap(QPixmap(":/images/spell_book.png").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/1.8));
-    ui->label_3->setPixmap(QPixmap(":/images/cook_baby.jpg").scaled(QApplication::desktop()->screenGeometry().width()/4.0, QApplication::desktop()->screenGeometry().height()/1.8));
-    ui->label_4->setPixmap(QPixmap(":/images/pec_na_dite.jpg").scaled(QApplication::desktop()->screenGeometry().width()/4.0, QApplication::desktop()->screenGeometry().height()/2.5));
-    ui->label->setPixmap(QPixmap(":/images/tor.png").scaled(QApplication::desktop()->screenGeometry().width()/5.0, QApplication::desktop()->screenGeometry().height()/2.2));
+    ui->label_2->setPixmap(QPixmap(":/images/spell_book.png").scaled(QApplication::desktop()->screenGeometry().width()/5, QApplication::desktop()->screenGeometry().height()/2.3));
+    ui->label_3->setPixmap(QPixmap(":/images/cook_baby.jpg").scaled(QApplication::desktop()->screenGeometry().width()/5, QApplication::desktop()->screenGeometry().height()/2.3));
+    ui->label_4->setPixmap(QPixmap(":/images/pec_na_dite.jpg").scaled(QApplication::desktop()->screenGeometry().width()/5, QApplication::desktop()->screenGeometry().height()/3));
+    ui->label->setPixmap(QPixmap(":/images/tor.png").scaled(QApplication::desktop()->screenGeometry().width()/5, QApplication::desktop()->screenGeometry().height()/2.7));
 }
 
 jezibaba::~jezibaba()
