@@ -39,6 +39,7 @@ void timer::incMin()
 
 void timer::decSec()
 {
+    //comment
     time--;
     if(time > 0)
         setTime(time);
