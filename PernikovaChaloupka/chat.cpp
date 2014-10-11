@@ -1,5 +1,6 @@
 #include "chat.h"
 #include "ui_chat.h"
+#include <QPalette>
 
 Chat::Chat(QWidget *parent) :
     QWidget(parent),

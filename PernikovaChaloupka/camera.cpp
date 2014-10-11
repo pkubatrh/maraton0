@@ -8,6 +8,9 @@ Camera::Camera(QWidget *parent) :
     ui(new Ui::Camera)
 {
     ui->setupUi(this);
+    QPalette* palette = new QPalette();
+    palette->setBrush(QPalette::Background,*(new QBrush(*(new QPixmap(":/images/per_tex.png")))));
+    setPalette(*palette);
     ui->verticalLayout->setAlignment(Qt::AlignCenter);
     ui->pushButton_3->setIcon(QIcon(QPixmap(":/images/arrow_green.png")));
     QRect *r = new QRect();

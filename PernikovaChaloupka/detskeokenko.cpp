@@ -6,6 +6,7 @@
 
 #include <QDebug>
 #include <QPalette>
+#include <QDesktopWidget>
 
 DetskeOkenko::DetskeOkenko(QWidget *parent) :
     QMainWindow(parent),
@@ -47,7 +48,11 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     p->drawText(image->rect(), Qt::AlignCenter, QString::number(days, 10));
     ui->label_3->setPixmap(QPixmap::fromImage(*image));
     ui->label_3->setAlignment(Qt::AlignCenter);
-
+    ui->label->setPixmap(QPixmap(":/images/yt_logo.png").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/5.0));
+    ui->label_2->setPixmap(QPixmap(":/images/webka.png").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/2.2));
+    ui->label_6->setPixmap(QPixmap(":/images/mot.gif").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/1.8));
+    ui->label_4->setPixmap(QPixmap(":/images/money.jpg").scaled(QApplication::desktop()->screenGeometry().width()/3.4, QApplication::desktop()->screenGeometry().height()/2.2));
+    ui->label_5->setPixmap(QPixmap(":/images/krav.png").scaled(QApplication::desktop()->screenGeometry().width()/3.2, QApplication::desktop()->screenGeometry().height()/2.2));
 
 }
 
