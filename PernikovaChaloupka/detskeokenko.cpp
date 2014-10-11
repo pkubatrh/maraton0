@@ -30,4 +30,11 @@ void DetskeOkenko::openVids()
 {
     DiteVideo *v = new DiteVideo();
     v->showFullScreen();
+    connect(v, SIGNAL(closing()), this, SLOT(closeVids()));
+}
+
+void DetskeOkenko::closeVids() {
+    DiteVideo *v = qobject_cast<DiteVideo *>(QObject::sender());
+    delete v;
+    this->showFullScreen();
 }
