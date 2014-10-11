@@ -19,6 +19,7 @@ SOURCES += main.cpp\
     chat.cpp \
     spells.cpp \
     camera.cpp \
+    pojisteniclanek.cpp \
     timer.cpp
 HEADERS += mainwindow.h \
     clickablelabel.h \
@@ -28,6 +29,7 @@ HEADERS += mainwindow.h \
     chat.h \
     spells.h \
     camera.h \
+    pojisteniclanek.h \
     timer.h
 FORMS += mainwindow.ui \
     detskeokenko.ui \
@@ -35,7 +37,8 @@ FORMS += mainwindow.ui \
     jezibaba.ui \
     chat.ui \
     spells.ui \
-    camera.ui
+    camera.ui \
+    pojisteniclanek.ui
 OTHER_FILES +=
 RESOURCES += \
     images.qrc \
