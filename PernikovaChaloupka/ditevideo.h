@@ -15,6 +15,12 @@ public:
     explicit DiteVideo(QWidget *parent = 0);
     ~DiteVideo();
 
+public Q_SLOTS:
+    void closeMe();
+
+Q_SIGNALS:
+    void closing();
+
 private:
     Ui::DiteVideo *ui;
 };

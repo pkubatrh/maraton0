@@ -15,6 +15,14 @@ DiteVideo::DiteVideo(QWidget *parent) :
     ui->webView_2->load(QUrl("https://www.youtube.com/embed/p7qMG-L1oxU"));
     ui->webView_3->load(QUrl("https://www.youtube.com/embed/iPu-HVPCicE"));
     ui->webView_4->load(QUrl("https://www.youtube.com/embed/VLDKnWi2hNA"));
+    ui->pushButton->setText("Zpět");
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(closeMe()));
+}
+
+void DiteVideo::closeMe() {
+    this->close();
+    emit closing();
+    delete ui;
 }
 
 DiteVideo::~DiteVideo()
