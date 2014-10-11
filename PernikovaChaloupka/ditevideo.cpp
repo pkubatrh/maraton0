@@ -15,7 +15,18 @@ DiteVideo::DiteVideo(QWidget *parent) :
     ui->webView_2->load(QUrl("https://www.youtube.com/embed/p7qMG-L1oxU"));
     ui->webView_3->load(QUrl("https://www.youtube.com/embed/iPu-HVPCicE"));
     ui->webView_4->load(QUrl("https://www.youtube.com/embed/VLDKnWi2hNA"));
-    ui->pushButton->setText("Zpět");
+    QPixmap pixmap(":/images/arrow_green.png");
+    QIcon ButtonIcon(pixmap);
+    ui->pushButton->setIcon(ButtonIcon);
+    QRect *r = new QRect();
+    r->setWidth(200);
+    r->setHeight(30);
+    ui->pushButton->setFocusPolicy(Qt::NoFocus);
+    ui->pushButton->setMaximumHeight(30);
+    ui->pushButton->setMaximumWidth(200);
+    ui->pushButton->setFlat(true);
+    ui->pushButton->setIconSize(r->size());
+    ui->pushButton->setText("");
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(closeMe()));
 }
 
