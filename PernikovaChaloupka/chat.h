@@ -4,19 +4,27 @@
 #include <QWidget>
 
 namespace Ui {
-class chat;
+class Chat;
 }
 
-class chat : public QWidget
+class Chat : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit chat(QWidget *parent = 0);
-    ~chat();
+    explicit Chat(QWidget *parent = 0);
+    ~Chat();
+
+private slots:
+    void on_lineEdit_returnPressed();
+
+    void on_pushButton_clicked();
 
 private:
-    Ui::chat *ui;
+    Ui::Chat *ui;
+
+Q_SIGNALS:
+    void closing();
 };
 
 #endif // CHAT_H

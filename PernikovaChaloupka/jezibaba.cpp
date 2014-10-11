@@ -1,4 +1,6 @@
 #include "jezibaba.h"
+#include "chat.h"
+#include "spells.h"
 #include "ui_jezibaba.h"
 #include <QPixmap>
 #include <QLabel>
@@ -10,6 +12,18 @@ jezibaba::jezibaba(QWidget *parent) :
     ui(new Ui::jezibaba)
 {
     ui->setupUi(this);
+    QPixmap pixmap(":/images/arrow_green.png");
+    QIcon ButtonIcon(pixmap);
+    ui->pushButton->setIcon(ButtonIcon);
+    QRect *r = new QRect();
+    r->setWidth(200);
+    r->setHeight(30);
+    ui->pushButton->setFocusPolicy(Qt::NoFocus);
+    ui->pushButton->setMaximumHeight(30);
+    ui->pushButton->setMaximumWidth(200);
+    ui->pushButton->setFlat(true);
+    ui->pushButton->setIconSize(r->size());
+    ui->pushButton->setText("");
 }
 
 jezibaba::~jezibaba()
@@ -19,21 +33,21 @@ jezibaba::~jezibaba()
 
 void jezibaba::on_label_clicked()
 {
-    this->days++;
-    QFont f( "Arial", 150, QFont::Bold);
-    p->eraseRect(image->rect());
-    delete p;
-    image = new QImage(":/images/kal.png");
-    p = new QPainter(this->image);
-    p->setFont(f);
-    p->drawText(image->rect(), Qt::AlignCenter, QString::number(days, 10));
-    ui->label->setPixmap(QPixmap::fromImage(*image));
-    ui->label->setAlignment(Qt::AlignCenter);
-    ui->label->repaint();
+    //qDebug() << "serepes\n";
+    Chat *chat = new Chat();
+    chat->showFullScreen();
+    connect(chat, SIGNAL(closing()), this, SLOT(showFullScreen()));
 }
 
 void jezibaba::on_pushButton_clicked()
 {
     emit closing();
     this->close();
+}
+
+void jezibaba::on_label_2_clicked()
+{
+    Spells *w = new Spells();
+    w->showFullScreen();
+    connect(w, SIGNAL(closing()), this, SLOT(showFullScreen()));
 }

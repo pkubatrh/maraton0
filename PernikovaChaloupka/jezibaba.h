@@ -23,6 +23,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_label_2_clicked();
+
 private:
     Ui::jezibaba *ui;
 
