@@ -16,6 +16,7 @@ public:
     ~jezibaba();
     int days;
     QImage *image;
+    QPainter *p;
 
 private slots:
     void on_label_clicked();

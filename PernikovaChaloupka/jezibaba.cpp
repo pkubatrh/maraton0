@@ -9,10 +9,11 @@ jezibaba::jezibaba(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::jezibaba)
 {
+    this->days = 0;
     ui->setupUi(this);
     ui->label->resize(210,300);
     this->image = new QImage("/home/pavel/Projects/maraton0/kalendar/kalendar/3.png");
-    QPainter *p = new QPainter(image);
+    p = new QPainter(image);
     QFont f( "Arial", 150, QFont::Bold);
     p->setFont(f);
     p->drawText(image->rect(), Qt::AlignCenter, QString::number(days, 10));
@@ -29,8 +30,10 @@ void jezibaba::on_label_clicked()
 {
     this->days++;
     QFont f( "Arial", 150, QFont::Bold);
-    //image = new QImage("/home/pavel/Projects/maraton0/kalendar/kalendar/3.png");
-    QPainter *p = new QPainter(this->image);
+    p->eraseRect(image->rect());
+    delete p;
+    image = new QImage("/home/pavel/Projects/maraton0/kalendar/kalendar/3.png");
+    p = new QPainter(this->image);
     p->setFont(f);
     p->drawText(image->rect(), Qt::AlignCenter, QString::number(days, 10));
     ui->label->setPixmap(QPixmap::fromImage(*image));
