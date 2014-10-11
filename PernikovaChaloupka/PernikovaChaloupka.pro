@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     spells.cpp \
     camera.cpp \
     pojisteniclanek.cpp \
-    timer.cpp
+    timer.cpp \
+    cookbook.cpp
 HEADERS += mainwindow.h \
     clickablelabel.h \
     detskeokenko.h \
@@ -30,7 +31,8 @@ HEADERS += mainwindow.h \
     spells.h \
     camera.h \
     pojisteniclanek.h \
-    timer.h
+    timer.h \
+    cookbook.h
 FORMS += mainwindow.ui \
     detskeokenko.ui \
     ditevideo.ui \
@@ -38,7 +40,8 @@ FORMS += mainwindow.ui \
     chat.ui \
     spells.ui \
     camera.ui \
-    pojisteniclanek.ui
+    pojisteniclanek.ui \
+    cookbook.ui
 OTHER_FILES +=
 RESOURCES += \
     images.qrc \

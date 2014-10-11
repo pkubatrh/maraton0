@@ -27,6 +27,11 @@ jezibaba::jezibaba(QWidget *parent) :
     ui->pushButton->setFlat(true);
     ui->pushButton->setIconSize(r->size());
     ui->pushButton->setText("");
+
+    QPixmap pixmap2(":/images/spell_book.png");
+    ui->label_2->setPixmap(pixmap2);
+    ui->label_2->setMaximumWidth(424);
+    ui->label_2->setMaximumHeight(600);
 }
 
 jezibaba::~jezibaba()
