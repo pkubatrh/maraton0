@@ -6,6 +6,9 @@ Chat::Chat(QWidget *parent) :
     ui(new Ui::Chat)
 {
     ui->setupUi(this);
+    QPalette* palette = new QPalette();
+    palette->setBrush(QPalette::Background,*(new QBrush(*(new QPixmap(":/images/witch_tex.png")))));
+    setPalette(*palette);
     QPixmap pixmap(":/images/arrow_green.png");
     QIcon ButtonIcon(pixmap);
     ui->pushButton->setIcon(ButtonIcon);
