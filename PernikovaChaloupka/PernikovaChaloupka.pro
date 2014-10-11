@@ -18,20 +18,23 @@ SOURCES += main.cpp\
     detskeokenko.cpp \
     ditevideo.cpp \
     jezibaba.cpp \
-    chat.cpp
+    chat.cpp \
+    spells.cpp
 
 HEADERS  += mainwindow.h \
     clickablelabel.h \
     detskeokenko.h \
     ditevideo.h \
     jezibaba.h \
-    chat.h
+    chat.h \
+    spells.h
 
 FORMS    += mainwindow.ui \
     detskeokenko.ui \
     ditevideo.ui \
     jezibaba.ui \
-    chat.ui
+    chat.ui \
+    spells.ui
 
 OTHER_FILES +=
 

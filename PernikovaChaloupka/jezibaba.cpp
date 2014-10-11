@@ -1,5 +1,6 @@
 #include "jezibaba.h"
 #include "chat.h"
+#include "spells.h"
 #include "ui_jezibaba.h"
 #include <QPixmap>
 #include <QLabel>
@@ -29,4 +30,10 @@ void jezibaba::on_pushButton_clicked()
 {
     emit closing();
     this->close();
+}
+
+void jezibaba::on_label_2_clicked()
+{
+    Spells *w = new Spells();
+    w->showFullScreen();
 }
