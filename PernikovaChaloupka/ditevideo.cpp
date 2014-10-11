@@ -11,7 +11,7 @@ DiteVideo::DiteVideo(QWidget *parent) :
     QNetworkProxyFactory::setUseSystemConfiguration (true);
     QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, true);
     QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, true);
-    ui->webView->load(QUrl("https://www.youtube.com/embed/iGiJAn06AyQ"));
+    ui->webView->load(QUrl("https://www.youtube.com/embed/4NJ2IhiOlyc"));
     ui->webView_2->load(QUrl("https://www.youtube.com/embed/p7qMG-L1oxU"));
     ui->webView_3->load(QUrl("https://www.youtube.com/embed/iPu-HVPCicE"));
     ui->webView_4->load(QUrl("https://www.youtube.com/embed/VLDKnWi2hNA"));
@@ -21,8 +21,11 @@ DiteVideo::DiteVideo(QWidget *parent) :
 
 void DiteVideo::closeMe() {
     this->close();
+    //ui->webView->stop();
+    //ui->webView_2->stop();
+    //ui->webView_3->stop();
+    //ui->webView_4->stop();
     emit closing();
-    delete ui;
 }
 
 DiteVideo::~DiteVideo()

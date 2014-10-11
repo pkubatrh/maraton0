@@ -23,6 +23,7 @@ private:
 
 private Q_SLOTS:
     void closeMe();
+    void closeVids();
 
 Q_SIGNALS:
     void closing();
