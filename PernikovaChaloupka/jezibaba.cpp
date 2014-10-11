@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QImage>
 #include <QPainter>
+#include <QDesktopWidget>
 
 jezibaba::jezibaba(QWidget *parent) :
     QMainWindow(parent),
@@ -28,10 +29,7 @@ jezibaba::jezibaba(QWidget *parent) :
     ui->pushButton->setIconSize(r->size());
     ui->pushButton->setText("");
 
-    QPixmap pixmap2(":/images/spell_book.png");
-    ui->label_2->setPixmap(pixmap2);
-    ui->label_2->setMaximumWidth(424);
-    ui->label_2->setMaximumHeight(600);
+    ui->label_2->setPixmap(QPixmap(":/images/spell_book.png").scaled(QApplication::desktop()->screenGeometry().width()/3.6, QApplication::desktop()->screenGeometry().height()/1.8));
 }
 
 jezibaba::~jezibaba()
