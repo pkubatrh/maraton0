@@ -10,6 +10,18 @@ Spells::Spells(QWidget *parent) :
     background: lightgray; }; ");
     page.mainFrame()->load(QUrl("http://5.231.63.187/kouzla.html"));
     connect(&page, SIGNAL(loadFinished(bool)), this, SLOT(readFirst()));
+    QPixmap pixmap(":/images/arrow_green.png");
+    QIcon ButtonIcon(pixmap);
+    ui->pushButton->setIcon(ButtonIcon);
+    QRect *r = new QRect();
+    r->setWidth(200);
+    r->setHeight(30);
+    ui->pushButton->setFocusPolicy(Qt::NoFocus);
+    ui->pushButton->setMaximumHeight(30);
+    ui->pushButton->setMaximumWidth(200);
+    ui->pushButton->setFlat(true);
+    ui->pushButton->setIconSize(r->size());
+    ui->pushButton->setText("");
 }
 
 void Spells::readFirst() {
@@ -31,4 +43,10 @@ void Spells::readFirst() {
 Spells::~Spells()
 {
     delete ui;
+}
+
+void Spells::on_pushButton_clicked()
+{
+    emit closing();
+    this->close();
 }

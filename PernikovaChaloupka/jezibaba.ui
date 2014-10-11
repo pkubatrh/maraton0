@@ -14,45 +14,29 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="ClickableLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>50</y>
-      <width>53</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Chat</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>85</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Back Man</string>
-    </property>
-   </widget>
-   <widget class="ClickableLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>40</y>
-      <width>53</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Spell List</string>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Back Man</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="ClickableLabel" name="label">
+      <property name="text">
+       <string>Chat</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="ClickableLabel" name="label_2">
+      <property name="text">
+       <string>Spell List</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

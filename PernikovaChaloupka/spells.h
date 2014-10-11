@@ -25,6 +25,10 @@ private:
 private Q_SLOTS:
     void readFirst();
 
+    void on_pushButton_clicked();
+
+Q_SIGNALS:
+    void closing();
 };
 
 #endif // SPELLS_H

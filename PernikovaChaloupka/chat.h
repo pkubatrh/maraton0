@@ -18,8 +18,13 @@ public:
 private slots:
     void on_lineEdit_returnPressed();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Chat *ui;
+
+Q_SIGNALS:
+    void closing();
 };
 
 #endif // CHAT_H
