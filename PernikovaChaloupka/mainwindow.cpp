@@ -1,10 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "detskeokenko.h"
-#include "calendar.h"
 #include "jezibaba.h"
 
 #include <QDesktopWidget>
+#include <QSound>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -29,12 +29,14 @@ void MainWindow::debugPrint() {
 }
 
 void MainWindow::detatko() {
+    QSound::play(":/sounds/lulu_cut.wav");
     DetskeOkenko *win = new DetskeOkenko();
     win->showFullScreen();
     connect(win, SIGNAL(closing()), this, SLOT(showFullScreen()));
 }
 
 void MainWindow::jezib() {
+    QSound::play(":/sounds/Kratka_Helca.wav");
     jezibaba *win = new jezibaba();
     win->showFullScreen();
     connect(win, SIGNAL(closing()), this, SLOT(showFullScreen()));

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui webkit webkitwidgets
+QT       += core gui webkit webkitwidgets multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -33,4 +33,5 @@ FORMS    += mainwindow.ui \
 OTHER_FILES +=
 
 RESOURCES += \
-    images.qrc
+    images.qrc \
+    sounds.qrc

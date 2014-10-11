@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>Kratka_Helca.wav</file>
+        <file>lulu_cut.wav</file>
+    </qresource>
+</RCC>
