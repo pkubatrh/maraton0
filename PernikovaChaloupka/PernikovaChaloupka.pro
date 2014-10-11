@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     ditevideo.cpp \
     jezibaba.cpp \
     chat.cpp \
-    spells.cpp
+    spells.cpp \
+    timer.cpp
 
 HEADERS  += mainwindow.h \
     clickablelabel.h \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     ditevideo.h \
     jezibaba.h \
     chat.h \
-    spells.h
+    spells.h \
+    timer.h
 
 FORMS    += mainwindow.ui \
     detskeokenko.ui \
