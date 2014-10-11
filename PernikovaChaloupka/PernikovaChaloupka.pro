@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui webkit webkitwidgets multimedia
+QT       += core gui webkit webkitwidgets multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     ditevideo.cpp \
     jezibaba.cpp \
     chat.cpp \
-    spells.cpp
+    spells.cpp \
+    camera.cpp
 
 HEADERS  += mainwindow.h \
     clickablelabel.h \
@@ -27,14 +28,16 @@ HEADERS  += mainwindow.h \
     ditevideo.h \
     jezibaba.h \
     chat.h \
-    spells.h
+    spells.h \
+    camera.h
 
 FORMS    += mainwindow.ui \
     detskeokenko.ui \
     ditevideo.ui \
     jezibaba.ui \
     chat.ui \
-    spells.ui
+    spells.ui \
+    camera.ui
 
 OTHER_FILES +=
 

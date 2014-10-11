@@ -1,6 +1,7 @@
 #include "detskeokenko.h"
 #include "ui_detskeokenko.h"
 #include "ditevideo.h"
+#include "camera.h"
 
 #include <QDebug>
 
@@ -11,6 +12,7 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     this->setStyleSheet("background: #FFF");
     ui->setupUi(this);
     ui->label->setText("Šikovná videa");
+    ui->label_2->setText("Poslední zpráva rodičům");
     QPixmap pixmap(":/images/arrow_green.png");
     QIcon ButtonIcon(pixmap);
     ui->pushButton->setIcon(ButtonIcon);
@@ -25,6 +27,7 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     ui->pushButton->setText("");
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(closeMe()));
     connect(ui->label, SIGNAL(clicked()), this, SLOT(openVids()));
+    connect(ui->label_2, SIGNAL(clicked()), this, SLOT(openCam()));
     this->days = 0;
     ui->label_3->resize(210,300);
     this->image = new QImage(":/images/kal.png");
@@ -72,4 +75,9 @@ void DetskeOkenko::on_label_3_clicked()
     ui->label_3->setPixmap(QPixmap::fromImage(*image));
     ui->label_3->setAlignment(Qt::AlignCenter);
     ui->label_3->repaint();
+}
+
+void DetskeOkenko::openCam() {
+    Camera *cam = new Camera();
+    cam->showFullScreen();
 }

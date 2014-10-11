@@ -24,6 +24,7 @@ public:
 
 public Q_SLOTS:
     void openVids();
+    void openCam();
 
 private:
     Ui::DetskeOkenko *ui;
