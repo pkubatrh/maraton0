@@ -2,6 +2,7 @@
 #include "ui_detskeokenko.h"
 #include "ditevideo.h"
 #include "camera.h"
+#include "pojisteniclanek.h"
 
 #include <QDebug>
 #include <QPalette>
@@ -16,6 +17,9 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     ui->setupUi(this);
     ui->label->setText("Šikovná videa");
     ui->label_2->setText("Poslední zpráva rodičům");
+    ui->label_4->setText("Pojištění");
+    ui->label_5->setText("Sebeobrana");
+    ui->label_6->setText("Motlitby");
     QPixmap pixmap(":/images/arrow_green.png");
     QIcon ButtonIcon(pixmap);
     ui->pushButton->setIcon(ButtonIcon);
@@ -31,6 +35,9 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(closeMe()));
     connect(ui->label, SIGNAL(clicked()), this, SLOT(openVids()));
     connect(ui->label_2, SIGNAL(clicked()), this, SLOT(openCam()));
+    connect(ui->label_4, SIGNAL(clicked()), this, SLOT(openPoj()));
+    connect(ui->label_5, SIGNAL(clicked()), this, SLOT(openSeb()));
+    connect(ui->label_6, SIGNAL(clicked()), this, SLOT(openMot()));
     this->days = 0;
     ui->label_3->resize(210,300);
     this->image = new QImage(":/images/kal.png");
@@ -40,6 +47,8 @@ DetskeOkenko::DetskeOkenko(QWidget *parent) :
     p->drawText(image->rect(), Qt::AlignCenter, QString::number(days, 10));
     ui->label_3->setPixmap(QPixmap::fromImage(*image));
     ui->label_3->setAlignment(Qt::AlignCenter);
+
+
 }
 
 void DetskeOkenko::closeMe() {
@@ -60,7 +69,7 @@ void DetskeOkenko::openVids()
 }
 
 void DetskeOkenko::closeVids() {
-    DiteVideo *v = qobject_cast<DiteVideo *>(QObject::sender());
+    QObject *v = QObject::sender();
     delete v;
     this->showFullScreen();
 }
@@ -84,4 +93,22 @@ void DetskeOkenko::openCam() {
     Camera *cam = new Camera();
     cam->showFullScreen();
     connect(cam, SIGNAL(closing()), this, SLOT(closeVids()));
+}
+
+void DetskeOkenko::openPoj() {
+    Pojisteniclanek *poj = new Pojisteniclanek("https://www.kb.cz/cs/lide/obcane/detske-zivotni-pojisteni-broucek.shtml");
+    poj->showFullScreen();
+    connect(poj, SIGNAL(closing()), this, SLOT(closeVids()));
+}
+
+void DetskeOkenko::openSeb() {
+    Pojisteniclanek *poj = new Pojisteniclanek("http://www.stream.cz/porady/skolapreziti");
+    poj->showFullScreen();
+    connect(poj, SIGNAL(closing()), this, SLOT(closeVids()));
+}
+
+void DetskeOkenko::openMot() {
+    Pojisteniclanek *poj = new Pojisteniclanek("http://www.modlitba.cz/?pid=78&xid=_48");
+    poj->showFullScreen();
+    connect(poj, SIGNAL(closing()), this, SLOT(closeVids()));
 }
