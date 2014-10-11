@@ -3,12 +3,15 @@
 #include "ditevideo.h"
 
 #include <QDebug>
+#include <QPalette>
 
 DetskeOkenko::DetskeOkenko(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::DetskeOkenko)
 {
-    this->setStyleSheet("background: #FFF");
+    QPalette* palette = new QPalette();
+    palette->setBrush(QPalette::Background,*(new QBrush(*(new QPixmap("/home/peta/Stažené/per_tex.png")))));
+    setPalette(*palette);
     ui->setupUi(this);
     ui->label->setText("Šikovná videa");
     QPixmap pixmap(":/images/arrow_green.png");
