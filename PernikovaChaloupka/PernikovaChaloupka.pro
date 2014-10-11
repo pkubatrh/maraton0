@@ -17,18 +17,21 @@ SOURCES += main.cpp\
     clickablelabel.cpp \
     detskeokenko.cpp \
     ditevideo.cpp \
-    jezibaba.cpp
+    jezibaba.cpp \
+    chat.cpp
 
 HEADERS  += mainwindow.h \
     clickablelabel.h \
     detskeokenko.h \
     ditevideo.h \
-    jezibaba.h
+    jezibaba.h \
+    chat.h
 
 FORMS    += mainwindow.ui \
     detskeokenko.ui \
     ditevideo.ui \
-    jezibaba.ui
+    jezibaba.ui \
+    chat.ui
 
 OTHER_FILES +=
 

@@ -9,16 +9,7 @@ jezibaba::jezibaba(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::jezibaba)
 {
-    this->days = 0;
     ui->setupUi(this);
-    ui->label->resize(210,300);
-    this->image = new QImage(":/images/kal.png");
-    p = new QPainter(image);
-    QFont f( "Arial", 150, QFont::Bold);
-    p->setFont(f);
-    p->drawText(image->rect(), Qt::AlignCenter, QString::number(days, 10));
-    ui->label->setPixmap(QPixmap::fromImage(*image));
-    ui->label->setAlignment(Qt::AlignCenter);
 }
 
 jezibaba::~jezibaba()
@@ -39,4 +30,10 @@ void jezibaba::on_label_clicked()
     ui->label->setPixmap(QPixmap::fromImage(*image));
     ui->label->setAlignment(Qt::AlignCenter);
     ui->label->repaint();
+}
+
+void jezibaba::on_pushButton_clicked()
+{
+    emit closing();
+    this->close();
 }

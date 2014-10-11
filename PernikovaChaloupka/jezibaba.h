@@ -21,8 +21,13 @@ public:
 private slots:
     void on_label_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::jezibaba *ui;
+
+Q_SIGNALS:
+    void closing();
 };
 
 #endif // JEZIBABA_H
