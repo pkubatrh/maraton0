@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "detskeokenko.h"
+#include "calendar.h"
+#include "jezibaba.h"
 
 #include <QDesktopWidget>
 #include <QDebug>
@@ -17,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label3->setText("<span style=\"font: 28pt; halign:center; font-weight: 600;\">Perníková chaloupka IS: Co jsi zač?</span>");
     ui->label3->setAlignment(Qt::AlignCenter);
     connect(ui->label, SIGNAL(clicked()), this, SLOT(debugPrint()));
+    connect(ui->label, SIGNAL(clicked()), this, SLOT(jezib()));
     connect(ui->label2, SIGNAL(clicked()), this, SLOT(debugPrint()));
     connect(ui->label2, SIGNAL(clicked()), this, SLOT(detatko()));
 }
@@ -27,6 +30,12 @@ void MainWindow::debugPrint() {
 
 void MainWindow::detatko() {
     DetskeOkenko *win = new DetskeOkenko();
+    win->showFullScreen();
+    connect(win, SIGNAL(closing()), this, SLOT(showFullScreen()));
+}
+
+void MainWindow::jezib() {
+    jezibaba *win = new jezibaba();
     win->showFullScreen();
     connect(win, SIGNAL(closing()), this, SLOT(showFullScreen()));
 }

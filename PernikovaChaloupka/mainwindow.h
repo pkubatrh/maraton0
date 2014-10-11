@@ -20,6 +20,7 @@ private Q_SLOTS:
 
 public Q_SLOTS:
     void detatko();
+    void jezib();
 
 private:
     Ui::MainWindow *ui;
